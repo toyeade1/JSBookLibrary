@@ -1,5 +1,6 @@
 let myLibrary = [];
 
+
 /* This is the function that creates a book object */
 function Book(title, author, pages, hasRead) {
     this.title = title;
@@ -80,7 +81,6 @@ addBook.addEventListener("click", function(e) {
 
 
 
-
 /* This is the cancel button that will close the form and clear its contents */
 let cancelButton = document.querySelector(".cancel");
 cancelButton.addEventListener("click", function(e) {
@@ -92,27 +92,38 @@ cancelButton.addEventListener("click", function(e) {
     document.getElementById("bookForm").style.display = "none";
 });
 
+
+/* Edit button */
 function editButton() {
     let bookLibrary = document.querySelectorAll(".book-contents");
-    let currentAuthor = ""
 
-    bookLibrary.forEach(book => book.addEventListener("click", function(e) {
+    bookLibrary.forEach(book => { 
+        
+        book.addEventListener("click", function(e) {
 
-        console.log(book);
+            console.log(book);
 
-        currentAuthor = document.getElementsByClassName("book-author").item(0);
-    
-        console.log(currentAuthor);
-        console.log(currentAuthor.innerText);
+            let currentTitle = book.getElementsByClassName("book-title").item(0).innerHTML;
+            let currentAuthor = book.getElementsByClassName("book-author").item(0).innerHTML;
+            let currentPages = parseInt(book.querySelector(".book-pages").innerText, 10);
+            let currentRead = book.getElementsByClassName("has-read").item(0).innerHTML;
+            console.log(currentRead);
 
-        let currentPage = book.page;
-        let currentHadRead = book.read;
 
-        document.getElementById("bookForm").style.display = "block";
-        document.getElementById("bookForm").style.top = (window.innerHeight / 2) - (document.getElementById("bookForm").height / 2) + "px";
-        document.getElementById("bookForm").style.left = (window.innerWidth / 2) - (document.getElementById("bookForm").width / 2) + "px";
 
-    }));
+
+
+            document.getElementById("bookForm").style.display = "block";
+            document.getElementById("bookForm").style.top = (window.innerHeight / 2) - (document.getElementById("bookForm").height / 2) + "px";
+            document.getElementById("bookForm").style.left = (window.innerWidth / 2) - (document.getElementById("bookForm").width / 2) + "px";
+
+            document.querySelector("#title").value = currentTitle;
+            document.querySelector("#author").value = currentAuthor;
+            document.querySelector("#pages").value = currentPages;
+            if (currentRead == "Read") {document.querySelector("#has-read").checked = true;}
+            else {document.querySelector("#has-read").checked = false};
+
+    })});
 };
 
 

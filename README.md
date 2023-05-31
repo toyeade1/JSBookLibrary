@@ -10,6 +10,8 @@ Will be building a book library to showcase my understanding on current JS lesso
 
 update v1.0 - Built basic infastructures for webpage and attached basic functionality
 
+update v1.1 - Added JavaScript functions to most of the newly created infastructures, planning on refining the infastructures in the next update.
+
 
 
 
