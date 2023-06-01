@@ -30,7 +30,13 @@ pre { font-family: Papyrus, fantasy; font-size: 13px; font-style: normal; font-v
 
 .body-head-heading {
     color: white;
+    font-size: 50px;
+}
 
+.header-icon {
+    padding-left: 80px;
+    font-size: 50px;
+    padding-top: 20px;
 }
 /*------------------------------------------ Body Body --------------------------------------------*/
 
@@ -43,6 +49,10 @@ pre { font-family: Papyrus, fantasy; font-size: 13px; font-style: normal; font-v
 
 .body-left {
     background-color: #DDE6ED;
+}
+
+.body-left-heading {
+    font-size: 25px;
 }
 
 .body-left-body {
